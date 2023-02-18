@@ -10,6 +10,7 @@ public class TVPlanif : MonoBehaviour
 {
     private VideoPlayer videoPlayer;
     [SerializeField] private VirtualButtonBehaviour virtualButtonBehaviour;
+    [SerializeField] private ParticleSystem particlePlayButton;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class TVPlanif : MonoBehaviour
     }
 
     public void ToggleVideo(VirtualButtonBehaviour behaviour) {
+        particlePlayButton.Play();
         if (videoPlayer.isPlaying) {
             videoPlayer.Pause();
         } else {
